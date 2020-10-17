@@ -6,6 +6,7 @@ console.log("working");
 let map = L.map("mapid").setView([37.6213, -122.3790], 5);
 
 // Coordinates for each point to be used in the line.
+//route from LAX, SFO, SLC, and SEA
 let line = [
   [33.9416, -118.4085],
   [37.6213, -122.3790],

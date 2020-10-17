@@ -1,7 +1,7 @@
 //check if code is woirking
 console.log("working");
-// Create the map object with center at the San Francisco airport,, zoom level 10.
-let map = L.map('mapid').setView([37.5, -122.5], 10);
+// Create the map object with center and zoom level. This is the geographical center of the earth
+let map = L.map('mapid').setView([30, 30], 2);
 
 
 // Add GeoJSON data.
@@ -40,6 +40,16 @@ let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/dark-v10/tile
 attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery (c) <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     accessToken: API_KEY
+});
+
+// Accessing the airport GeoJSON URL through github
+let airportData = "https://raw.githubusercontent.com/ramruph/Mapping-Earthquakes/Mapping_geoJSON_Point/majorAirports.json"
+
+// Grabbing our GeoJSON data.
+d3.json(airportData).then(function(data) {
+  console.log(data);
+// Creating a GeoJSON layer with the retrieved data.
+L.geoJson(data).addTo(map);
 });
 
 // Then we add our 'graymap' tile layer to the map.
