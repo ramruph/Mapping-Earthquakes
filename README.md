@@ -1,2 +1,2 @@
 # Mapping-Earthquakes
-![](images/map.png)
+![](images/Map.png)
